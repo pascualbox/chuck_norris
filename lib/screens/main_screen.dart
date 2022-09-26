@@ -90,7 +90,6 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     DateTime timeBackPressed = DateTime.now();
-    bool close = false;
     return WillPopScope(
         onWillPop: () async {
           final difference = DateTime.now().difference(timeBackPressed);
@@ -101,7 +100,6 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
             Fluttertoast.showToast(msg: message);
             return false;
           } else {
-            Fluttertoast.cancel();
             return true;
           }
         },
